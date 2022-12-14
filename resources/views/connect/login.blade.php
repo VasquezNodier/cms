@@ -5,14 +5,14 @@
 <div class="centered-box">
     <div class="box shadow">
         <h1 class="text-center">Login</h1>
-        <form action="{{ url('create') }}" method="post">
+        <form action="{{ url('login') }}" method="post">
 
             @include('connect.errors')
 
             @csrf
             <div class="mb-3">
             <label for="email" class="form-label">Email</label>
-            <input type="email" class="form-control" required name="email" id="email" placeholder="Email / Username">
+            <input type="text" class="form-control" required name="email" id="email" placeholder="Email / Username">
             </div>
             <div class="mb-3">
                 <label for="password" class="form-label">Password</label>

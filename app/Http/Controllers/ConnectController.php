@@ -3,19 +3,49 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Validator, Hash;
+use Validator, Hash, Auth;
 use App\Models\User;
 
 class ConnectController extends Controller
 {
+     public function __construct()
+     {
+        $this->middleware('guest')->except(['logout']);
+     }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('connect.login');
+        if ($request->isMethod('get'))
+        {
+            return view('connect.login');
+        }
+        $rules = [
+            'email' => 'required',
+            'password' => 'required'
+        ];
+
+        $validator = Validator::make($request->all(), $rules);
+
+        if($validator->fails()){
+            return back()->withErrors($validator)->with('message','Error de validación')->with('type-alert','danger');
+        }else{
+            if (Auth::attempt(['email' =>$request->input('email'), 'password' => $request->input('password')],true)
+                || Auth::attempt(['username' =>$request->input('email'), 'password' => $request->input('password')],true)) {
+                return redirect('/');
+            } else {
+                return back()->with('message','Error de validación')->with('type-alert','danger');
+            }
+        }
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+        return redirect('/');
     }
 
     /**

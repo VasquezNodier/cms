@@ -15,11 +15,16 @@ use App\Http\Controllers\ConnectController;
 |
 */
 
-Route::get('/', function () {
+Route::get('/home', function () {
     return view('welcome');
 });
 
-Route::get('login', [ConnectController::class, 'index'])->name('login');
+Route::get('/', function () {
+    return "INDEX";
+});
+
+Route::match(['get', 'post'], 'login', [ConnectController::class, 'index'])->name('login');
+Route::get('logout', [ConnectController::class, 'logout'])->name('logout');
 Route::get('register', [ConnectController::class, 'create'])->name('register');
 Route::post('createUser', [ConnectController::class, 'store'])->name('create');
 Route::get('recover', [ConnectController::class, 'edit'])->name('recover');
