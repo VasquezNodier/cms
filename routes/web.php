@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\ConnectController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,3 +18,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('login', [ConnectController::class, 'index'])->name('login');
+Route::get('register', [ConnectController::class, 'create'])->name('register');
+Route::post('createUser', [ConnectController::class, 'store'])->name('create');
+Route::get('recover', [ConnectController::class, 'edit'])->name('recover');
+
