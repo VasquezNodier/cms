@@ -11,7 +11,7 @@
         <h1 class="text-center">Login</h1>
         <form action="{{ url('login') }}" method="post">
 
-            @include('connect.errors')
+            @include('layouts.errors')
 
             @csrf
             <div class="mb-3">

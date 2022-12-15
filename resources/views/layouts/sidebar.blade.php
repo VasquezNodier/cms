@@ -1,7 +1,7 @@
 <div class="sidebar shadow">
     <div class="section-top shadow px-3">
         <div class="logo pt-3">
-            <h1 class="text-center">LOGOTIPO</h1>
+            <h1 class="text-center">LOGO</h1>
         </div>
         <div class="user py-3">
             <span class="subtitle">Hola:</span>

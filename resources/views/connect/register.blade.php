@@ -12,7 +12,7 @@
         <h1 class="text-center">Register</h1>
         <form action="{{ url('createUser') }}" method="POST">
 
-            @include('connect.errors')
+            @include('layouts.errors')
 
             @csrf
             <div class="row">
