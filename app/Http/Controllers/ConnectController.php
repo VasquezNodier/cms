@@ -35,7 +35,11 @@ class ConnectController extends Controller
         }else{
             if (Auth::attempt(['email' =>$request->input('email'), 'password' => $request->input('password')],true)
                 || Auth::attempt(['username' =>$request->input('email'), 'password' => $request->input('password')],true)) {
-                return redirect('/');
+                if (Auth::user()->role == '1') {
+                    return redirect('admin');
+                }else{
+                    return redirect('/');
+                }
             } else {
                 return back()->with('message','Error de validación')->with('type-alert','danger');
             }
@@ -45,7 +49,7 @@ class ConnectController extends Controller
     public function logout()
     {
         Auth::logout();
-        return redirect('/');
+        return redirect('login');
     }
 
     /**

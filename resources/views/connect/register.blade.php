@@ -1,5 +1,10 @@
-@extends('connect.master')
+@extends('layouts.master')
 @section('title','Register')
+
+@section('custom-head')
+<link rel="stylesheet" href="{{ url('/static/css/connect.css?v='.time()) }}">
+@stop
+
 
 @section('content')
 <div class="centered-box">

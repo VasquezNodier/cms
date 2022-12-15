@@ -1,5 +1,9 @@
-@extends('connect.master')
-@section('title','Login')
+@extends('layouts.master')
+@section('title','Recover')
+
+@section('custom-head')
+<link rel="stylesheet" href="{{ url('/static/css/connect.css?v='.time()) }}">
+@stop
 
 @section('content')
 <div class="login-box">

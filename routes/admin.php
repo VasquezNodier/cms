@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\ConnectController;
+use App\Http\Controllers\Admin\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,8 +15,6 @@ use App\Http\Controllers\ConnectController;
 |
 */
 
-Route::get('/admin', function () {
-    return "Hola Admin";
+Route::prefix('admin')->group(function(){
+    Route::get('/', [DashboardController::class, 'index']);
 });
-
-
