@@ -5,8 +5,15 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+use App\Models\User;
+
 class UserController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('isadmin');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +21,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        $users = User::orderBy('id')->get();
+        return view('admin.users.home')->with('users',$users);
     }
 
     /**
