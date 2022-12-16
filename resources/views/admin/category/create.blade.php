@@ -36,48 +36,28 @@
                         <input type="text" class="form-control" id="name">
                     </div>
                     <div class="col-md-4">
-                        <label for="category" class="form-label">Category</label>
-                        <select id="category" class="form-select">
+                        <label for="module" class="form-label">Module</label>
+                        <select id="module" class="form-select">
                             <option selected>Choose...</option>
-                            <option>Category 1</option>
-                            <option>Category 2</option>
-                            <option>Category 3</option>
-                            <option>Category 4</option>
+                            <option>Module 1</option>
+                            <option>Module 2</option>
+                            <option>Module 3</option>
+                            <option>Module 4</option>
                         </select>
                     </div>
 
-                    <div class="col-md-3">
+                    {{-- <div class="col-md-3">
                         <label for="price" class="form-label">Price</label>
                         <div class="input-group mb-3">
                             <span class="input-group-text" id="price">$</span>
                             <input type="text" class="form-control" aria-label="Price" aria-describedby="price">
                         </div>
-                    </div>
-
-                    <div class="col-md-3">
-                        <label for="margin" class="form-label">Margin</label>
-                        <div class="input-group mb-3">
-                            <span class="input-group-text" id="margin">%</span>
-                            <input type="text" class="form-control" aria-label="Margin" aria-describedby="margin">
-                        </div>
-                    </div>
-
-                    <div class="col-md-2">
-                        <label for="qty" class="form-label">Quantity</label>
-                        <input type="text" class="form-control" id="qty">
-                    </div>
+                    </div> --}}
 
                     <div class="row mt-3">
+
                         <div class="col-md-4">
-                            <label for="hasDiscount" class="form-label">Has Discount?</label>
-                            <select id="hasDiscount" class="form-select" onchange="showLink(value)">
-                                <option selected>Choose...</option>
-                                <option value="1">Yes</option>
-                                <option value="0">No</option>
-                            </select>
-                        </div>
-                        <div class="col-md-4">
-                            <label for="available" class="form-label">Available Product</label>
+                            <label for="available" class="form-label">Available Category</label>
                             <select id="available" class="form-select">
                                 <option selected>Choose...</option>
                                 <option value="1">Yes</option>
@@ -85,24 +65,6 @@
                             </select>
                         </div>
                     </div>
-
-                    <div id="discountFld" class="col-md-3">
-                        <label for="discount" class="form-label">Discount</label>
-                        <div class="input-group mb-3">
-                            <span class="input-group-text" id="discount">%</span>
-                            <input type="text" class="form-control" aria-label="Discount" aria-describedby="discount">
-                        </div>
-                    </div>
-
-                    <div class="mb-3 col-md-12">
-                        <label for="images" class="form-label">Product Images</label>
-                        <input class="form-control" type="file" id="images" multiple>
-                    </div>
-
-                    <div class="form-floating">
-                        <textarea class="form-control" id="description" style="height: 100px"></textarea>
-                    </div>
-
 
                     <div class="col-12 text-center">
                         <div class="btns mt-3 d-flex justify-content-evenly">
