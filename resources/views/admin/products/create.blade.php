@@ -29,7 +29,8 @@
             <div class="content-inside p-3">
 
 
-                <form action="{{ url('admin/producr/store') }}" class="row g-3" method="post" enctype="multipart/form-data">
+                <form action="{{ url('admin/producr/store') }}" class="row g-3" method="post"
+                    enctype="multipart/form-data">
                     <div class="col-md-8">
                         <label for="name" class="form-label">Name</label>
                         <input type="text" class="form-control" id="name">
@@ -45,18 +46,11 @@
                         </select>
                     </div>
 
-                    <div class="form-floating">
-                        <textarea class="form-control" placeholder="Leave a description here" id="description" style="height: 100px"></textarea>
-                        <label for="description">Description</label>
-                      </div>
-
-
                     <div class="col-md-3">
                         <label for="price" class="form-label">Price</label>
                         <div class="input-group mb-3">
                             <span class="input-group-text" id="price">$</span>
-                            <input type="text" class="form-control" aria-label="Price"
-                                aria-describedby="price">
+                            <input type="text" class="form-control" aria-label="Price" aria-describedby="price">
                         </div>
                     </div>
 
@@ -64,8 +58,7 @@
                         <label for="margin" class="form-label">Margin</label>
                         <div class="input-group mb-3">
                             <span class="input-group-text" id="margin">%</span>
-                            <input type="text" class="form-control" aria-label="Margin"
-                                aria-describedby="margin">
+                            <input type="text" class="form-control" aria-label="Margin" aria-describedby="margin">
                         </div>
                     </div>
 
@@ -77,7 +70,7 @@
                     <div class="row mt-3">
                         <div class="col-md-4">
                             <label for="hasDiscount" class="form-label">Has Discount?</label>
-                            <select id="hasDiscount" class="form-select">
+                            <select id="hasDiscount" class="form-select" onchange="showLink(value)">
                                 <option selected>Choose...</option>
                                 <option value="1">Yes</option>
                                 <option value="0">No</option>
@@ -93,21 +86,22 @@
                         </div>
                     </div>
 
-
-
-                    <div class="col-md-3">
+                    <div id="discountFld" class="col-md-3">
                         <label for="discount" class="form-label">Discount</label>
                         <div class="input-group mb-3">
                             <span class="input-group-text" id="discount">%</span>
-                            <input type="text" class="form-control" aria-label="Discount"
-                                aria-describedby="discount">
+                            <input type="text" class="form-control" aria-label="Discount" aria-describedby="discount">
                         </div>
                     </div>
 
                     <div class="mb-3 col-md-12">
                         <label for="images" class="form-label">Product Images</label>
                         <input class="form-control" type="file" id="images" multiple>
-                      </div>
+                    </div>
+
+                    <div class="form-floating">
+                        <textarea class="form-control" id="description" style="height: 100px"></textarea>
+                    </div>
 
 
                     <div class="col-12 text-center">

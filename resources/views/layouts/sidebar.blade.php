@@ -25,6 +25,9 @@
         <li>
             <a class="d-block p-2" href="{{ url('admin/users') }}"><i class="fa-solid fa-users"></i> Users</a>
         </li>
+        <li>
+            <a class="d-block p-2" href="{{ url('admin/category') }}"><i class="fa-solid fa-folder"></i> Categories</a>
+        </li>
       </ul>
     </div>
 </div>

@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,4 +25,8 @@ Route::prefix('admin')->group(function(){
     //Modulo productos
     Route::get('products', [ProductController::class, 'index']);
     Route::get('products/create', [ProductController::class, 'create']);
+
+    //Modulo Categorias
+    Route::get('category', [CategoryController::class, 'index']);
+    Route::get('category/create', [CategoryController::class, 'create']);
 });

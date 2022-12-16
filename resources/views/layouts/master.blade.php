@@ -21,6 +21,12 @@
 
     <!-- Fontawesome -->
     <script src="https://kit.fontawesome.com/491bcfab70.js" crossorigin="anonymous"></script>
+
+    <!-- CKEditor -->
+    <script src="{{ url('static/libs/ckeditor/ckeditor.js') }}"></script>
+    <script src="{{ url('static/libs/editorplaceholder/plugin.js') }}"></script>
+    <script src="{{ url('static/libs/ckeditor/plugins/label/plugin.js') }}"></script>
+
 </head>
 <body>
 
